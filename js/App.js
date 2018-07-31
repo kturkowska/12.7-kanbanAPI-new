@@ -2,14 +2,15 @@ var baseUrl = 'https://kodilla.com/pl/bootcamp-api';
 var myHeaders = {
 	'X-Client-Id': '3433',
 	'X-Auth-Token': '89e979655a71175638c2eb6125900036'
+
 };
-fetch(baseUrl + '/board', {
-	headers: myHeaders
-}).then(function (resp) {
-	return resp.json();
-}).then(function (resp) {
-	setupColumns(resp.columns);
-});
+fetch(baseUrl + '/board', { headers: myHeaders })
+  .then(function(resp) {
+    return resp.json();
+  })
+  .then(function(resp) {
+    setupColumns(resp.columns);
+  });
 
 function setupColumns(columns) {
 	columns.forEach(function (column) {
